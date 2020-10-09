@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<TabPane
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="nl.gyrobian.calculots.controller.MainWindowController"
+>
+    <Tab text="Basic" closable="false">
+        <fx:include source="tabs/basic.fxml"/>
+    </Tab>
+    <Tab text="Scientific" closable="false" disable="true">
+    </Tab>
+    <Tab text="Graphing" closable="false" disable="true">
+    </Tab>
+</TabPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox spacing="5" xmlns:fx="http://javafx.com/fxml" fx:controller="nl.gyrobian.calculots.controller.BasicCalculatorController">
+    <style>
+        -fx-font: 20 helvetica;
+    </style>
+    <padding><Insets topRightBottomLeft="10"/></padding>
+    <TextField fx:id="basicInputField" onKeyTyped="#onInputKeyTyped">
+        <style>
+            -fx-font: 20 monospace;
+            -fx-font-weight: bold;
+        </style>
+    </TextField>
+    <HBox>
+        <Button text="Undo"/>
+        <Button text="Redo"/>
+        <Button text="Clear"/>
+        <Button text="Back"/>
+    </HBox>
+    <GridPane hgap="2" vgap="2" >
+        <Button text="(" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="80" prefHeight="30"/>
+        <Button text=")" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="80" prefHeight="30"/>
+        <Button text="√" GridPane.columnIndex="2" GridPane.rowIndex="0" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="divideButton" text="÷" GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="80" prefHeight="30"/>
+
+        <Button fx:id="sevenButton" text="7" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="eightButton" text="8" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="nineButton" text="9" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="multiplyButton" text="×" GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="80" prefHeight="30"/>
+
+        <Button fx:id="fourButton" text="4" GridPane.columnIndex="0" GridPane.rowIndex="2" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="fiveButton" text="5" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="sixButton" text="6" GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="subtractButton" text="-" GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="80" prefHeight="30"/>
+
+        <Button fx:id="oneButton" text="1" GridPane.columnIndex="0" GridPane.rowIndex="3" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="twoButton" text="2" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="threeButton" text="3" GridPane.columnIndex="2" GridPane.rowIndex="3" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="addButton" text="+" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="80" prefHeight="30"/>
+
+        <Button fx:id="zeroButton" text="0" GridPane.columnIndex="0" GridPane.rowIndex="4" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="decimalButton" text="." GridPane.columnIndex="1" GridPane.rowIndex="4" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="ansButton" text="ans" GridPane.columnIndex="2" GridPane.rowIndex="4" prefWidth="80" prefHeight="30"/>
+        <Button fx:id="equalsButton" text="=" GridPane.columnIndex="3" GridPane.rowIndex="4" prefWidth="80" prefHeight="30"/>
+    </GridPane>
+</VBox>
