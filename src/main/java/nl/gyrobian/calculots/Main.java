@@ -4,8 +4,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import nl.gyrobian.calculots.model.CalculatorCanvas;
 
 import java.io.IOException;
 import java.net.URL;
@@ -32,8 +38,18 @@ public class Main extends Application {
         loader.setClassLoader(classLoader);
         loader.setLocation(mainWindowLayout);
         Parent root = loader.load();
+
         primaryStage.setTitle(this.properties.getProperty("application.name") + " v" + this.properties.getProperty("application.version"));
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setWidth(Double.parseDouble(this.properties.getProperty("application.default_width")));
+        primaryStage.setHeight(Double.parseDouble(this.properties.getProperty("application.default_height")));
+        CalculatorCanvas calculatorCanvas = new CalculatorCanvas();
+        calculatorCanvas.setPrefHeight(20000);
+        calculatorCanvas.setPrefWidth(20000);
+        calculatorCanvas.requestFocus();
+        VBox mainVbox = new VBox(this.buildMenuBar(), calculatorCanvas);
+        mainVbox.setFillWidth(true);
+        Scene scene = new Scene(mainVbox);
+        primaryStage.setScene(scene);
         primaryStage.getIcons().add(iconImage);
         primaryStage.show();
     }
@@ -54,5 +70,19 @@ public class Main extends Application {
             System.err.println("Could not load properties from main.properties.");
         }
         return properties;
+    }
+
+    private MenuBar buildMenuBar() {
+        MenuBar menuBar = new MenuBar();
+
+        Menu fileMenu = new Menu("File");
+        MenuItem exitItem = new MenuItem("Exit");
+        exitItem.setOnAction(e -> {
+            System.exit(0);
+        });
+        fileMenu.getItems().add(exitItem);
+
+        menuBar.getMenus().add(fileMenu);
+        return menuBar;
     }
 }

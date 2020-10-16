@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<TabPane
+<?import javafx.scene.layout.HBox?>
+<?import nl.gyrobian.calculots.model.CalculatorCanvas?>
+<HBox
         xmlns:fx="http://javafx.com/fxml"
         fx:controller="nl.gyrobian.calculots.controller.MainWindowController"
 >
-    <Tab text="Basic" closable="false">
-        <fx:include source="tabs/basic.fxml"/>
-    </Tab>
-    <Tab text="Scientific" closable="false" disable="true">
-    </Tab>
-    <Tab text="Graphing" closable="false" disable="true">
-    </Tab>
-</TabPane>
+</HBox>
