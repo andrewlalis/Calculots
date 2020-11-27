@@ -45,13 +45,14 @@ public class Main extends Application {
         CalculatorCanvas calculatorCanvas = new CalculatorCanvas();
         calculatorCanvas.setPrefHeight(20000);
         calculatorCanvas.setPrefWidth(20000);
-        calculatorCanvas.requestFocus();
         VBox mainVbox = new VBox(this.buildMenuBar(), calculatorCanvas);
         mainVbox.setFillWidth(true);
         Scene scene = new Scene(mainVbox);
+        scene.getStylesheets().add("javafx/main_window.css");
         primaryStage.setScene(scene);
         primaryStage.getIcons().add(iconImage);
         primaryStage.show();
+        calculatorCanvas.requestFocus();
     }
 
 
